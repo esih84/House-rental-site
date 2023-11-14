@@ -1,8 +1,11 @@
 
+
+
+
 export default function Home() {
   return (
-      <div>
-
-      </div>
+      <main>
+          <h1>سلام</h1>
+      </main>
   )
 }
