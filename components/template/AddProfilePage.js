@@ -4,6 +4,7 @@ import { useState } from "react";
 import TextInput from "../modules/TextInput";
 import RadioList from "../modules/RadioList";
 import TextList from "../modules/TextList";
+import CustomDatePicker from "../modules/CustomDatePicker";
 
 
 const AddProfilePage = () => {
@@ -35,6 +36,7 @@ const AddProfilePage = () => {
             <RadioList profileData={profileData} setProfileData={setProfileData}/>
             <TextList title="امکانات رفاهی" profileData={profileData} setProfileData={setProfileData} type="amenities" />
             <TextList title="قوانین" profileData={profileData} setProfileData={setProfileData} type="rules" />
+            <CustomDatePicker profileData={profileData} setProfileData={setProfileData}/>
             <button onClick={submnitHandler} className=" border-none bg-[#304ffe] text-white text-base rounded transition-all cursor-pointer p-[10px] hover:scale-105">ثبت آگهی</button>
         </div>
     );
