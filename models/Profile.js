@@ -52,4 +52,4 @@ const ProfileSchema = new Schema({
 
 const Profile = models.Profile || model("Profile", userSchema);
 
-export default User;
+export default Profile;
