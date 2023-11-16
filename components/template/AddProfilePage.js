@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import TextInput from "../modules/TextInput";
+import RadioList from "../modules/RadioList";
 
 const AddProfilePage = () => {
     const [profileData,setProfileData]=useState({
@@ -17,7 +18,7 @@ const AddProfilePage = () => {
         amenities:[],
     })
     const submnitHandler=()=>{
-        // console.log(profileData)
+        console.log(profileData)
     }
     return (
         <div className=" flex flex-col mb-36">
@@ -28,6 +29,7 @@ const AddProfilePage = () => {
             <TextInput  title="شماره تلفن" name="phone" profleData={profileData} setProfileData={setProfileData}/>
             <TextInput  title="قیمت(تومان)" name="price" profleData={profileData} setProfileData={setProfileData}/>
             <TextInput  title="بنگاه" name="realestate" profleData={profileData} setProfileData={setProfileData}/>
+            <RadioList profileData={profileData} setProfileData={setProfileData}/>
             <button onClick={submnitHandler} className=" border-none bg-[#304ffe] text-white text-base rounded transition-all cursor-pointer p-[10px] hover:scale-105">ثبت آگهی</button>
         </div>
     );
