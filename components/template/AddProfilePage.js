@@ -20,8 +20,18 @@ const AddProfilePage = () => {
         rules:[],
         amenities:[],
     })
-    const submnitHandler=()=>{
-        console.log(profileData)
+    const submnitHandler=async()=>{
+        const res= await fetch('/api/profile',{
+            method:"POST",
+            body:JSON.stringify(profileData),
+            headers:{"Content-Type":"application/json"}
+        })
+        const data = await res.json()
+        if (data.error) {
+            console.log(data.error)
+        }else{
+            console.log(data)
+        }
     }
     return (
         <div className=" flex flex-col mb-36">

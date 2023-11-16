@@ -2,7 +2,8 @@ import Profile from "@/models/Profile"
 import User from "@/models/User"
 import connectDB from "@/utils/connectDB"
 import { Types } from "mongoose"
-import { getServerSession } from "next-auth"
+import { getServerSession } from "next-auth/next"
+import { NextResponse } from "next/server"
 
 export const POST=async(request)=>{
     try {
@@ -19,7 +20,7 @@ export const POST=async(request)=>{
         category,
         rules,
         amenities}=body
-
+        // console.log(body)
         if (!title||
             !description||
            !location||
@@ -33,6 +34,7 @@ export const POST=async(request)=>{
         }
 
         const session = getServerSession(request)
+        console.log(session)
         if (!session) {
             return NextResponse.json({error:"لطفا وارد حساب کاربری خود بشوید"},{status:401})
             
