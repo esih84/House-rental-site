@@ -1,0 +1,19 @@
+import { p2e } from "@/utils/replaceNumber";
+
+const TextInput = ({title,name,profleData, setProfileData, textarea=false}) => {
+    const changeHandler=(e)=>{
+        setProfileData({...profleData,[e.target.name]:p2e(e.target.value)})
+    }
+    return (
+        <div>
+            <p className=" text-[1.1rem] mb-[5px]">{title}</p>
+            {textarea?
+            <textarea name={name} value={profleData[name]} onChange={changeHandler} className=" mb-10 w-[300px] border border-[#304ffe] border-dashed text-gray-600 rounded p-[10px] text-base  outline-none focus:outline-none focus:border-solid h-24 "/>
+            :
+            <input name={name} value={profleData[name]} onChange={changeHandler} className=" mb-10 w-[300px] border border-[#304ffe] border-dashed text-gray-600 rounded p-[10px] text-base h-10 outline-none focus:outline-none focus:border-solid"/>
+            }
+        </div>
+    );
+}
+
+export default TextInput;
