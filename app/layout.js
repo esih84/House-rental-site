@@ -1,6 +1,7 @@
 import Layout from '@/components/layout/Layout';
 import './globals.css';
 import { myFont } from '@/utils/fonts';
+import AuthProvider from 'providers/AuthProvider';
 
 export const metadata={
   title:"home rental site"
@@ -12,9 +13,11 @@ export default function RootLayout({ children }) {
     <html lang="fa" dir="rtl">
       
       <body className={myFont.className}>
-        <Layout>
-          {children}
-        </Layout>
+        <AuthProvider>
+          <Layout>
+            {children}
+          </Layout>
+        </AuthProvider>
         </body>
     </html>
   )

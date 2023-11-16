@@ -1,5 +1,6 @@
 import User from "@/models/User";
 import { verifyPassword } from "@/utils/auth";
+import connectDB from "@/utils/connectDB";
 import NextAuth from "next-auth";
 import  CredentialsProvider  from "next-auth/providers/credentials";
 
@@ -28,7 +29,7 @@ export const authOptions = {
                     throw new Error("لطفا ابتدا حساب کاربری ایجاد کنید")
 
                 }
-                const isValid = await verifyPassword(password, existinguser.password)
+                const isValid = await verifyPassword(password, user.password)
                 if (!isValid) {
                     throw new Error("ایمیل یا رمز عبور اشتباه است")
 
