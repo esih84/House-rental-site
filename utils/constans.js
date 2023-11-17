@@ -16,4 +16,15 @@ const categories = {
     office:<GiOfficeChair className=" text-[1.8rem] bg-[#304ffe58] text-[#304ffe] p-[3px] rounded"/>
 }
   
-  export {categories, icons}
+const services = ["خرید", "فروش", "رهن", "اجاره"];
+const cities = [
+  "تهران",
+  "سنندج",
+  "کرمانشاه",
+  "اهواز",
+  "مشهد",
+  "اصفهان",
+  "شیراز",
+  "خرم آباد",
+];
+  export {categories, icons,cities,services}
