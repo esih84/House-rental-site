@@ -1,6 +1,7 @@
 import { FaCity } from "react-icons/fa";
 import { FiCircle } from "react-icons/fi";
 import CategoryCard from "../modules/CategoryCard";
+import { categories } from "@/utils/data";
 
 const HomePage = () => {
     const services = ["خرید", "فروش", "رهن", "اجاره"];
@@ -14,13 +15,7 @@ const HomePage = () => {
       "شیراز",
       "خرم آباد",
     ];
-    const categories = {
-      apartment: "آپارتمان",
-      villa: "ویلا",
-      store: "مغازه",
-      office: "دفتر",
-    };
-    
+
     return (
         <div>
         <div className="flex flex-col-reverse justify-center items-center rounded-[10px] p-5 my-[100px]">
