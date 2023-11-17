@@ -38,7 +38,7 @@ export const POST=async(request)=>{
             return NextResponse.json({error:"لطفا وارد حساب کاربری خود بشوید"},{status:401})
             
         }
-        console.log(session)
+        // console.log(session)
         const user = await User.findOne({email:session.user.email})
         if (!user) {
             return NextResponse.json({error:"حساب کاربری وجود ندارد"},{status:404})
@@ -53,7 +53,7 @@ export const POST=async(request)=>{
             constructionDate,
             category,
             rules,
-            amenities,userId:new Types.ObjectId(user._id)})
+            amenities,userId: new Types.ObjectId(user._id)})
         // console.log(newProfile)
         return NextResponse.json({message:"آگهی جدید اضافه شد"},{status:201})
 

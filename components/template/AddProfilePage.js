@@ -8,9 +8,11 @@ import CustomDatePicker from "../modules/CustomDatePicker";
 import toast, { Toaster } from "react-hot-toast";
 import { ThreeDots } from "react-loader-spinner";
 import Loading from "../modules/Loading";
+import { useRouter } from "next/navigation";
 
 
 const AddProfilePage = () => {
+    const router = useRouter()
     const [profileData,setProfileData]=useState({
         title:"",
         description:"",
@@ -38,6 +40,7 @@ const AddProfilePage = () => {
             // console.log(data.error)
         }else{
             toast.success(data.message)
+            router.push("/dashboard/my-profile")
         }
     }
     return (
