@@ -10,7 +10,7 @@ const DashboardSideBar =async ({children}) => {
 
     return (
         <div className="flex flex-col md:flex-row justify-between mt-20">
-            <div className=" flex flex-col items-center ml-10 w-[220px] h-fit py-[30px] px-[15px] rounded-xl shadow-[0_4px_15px_rgba(48,79,254,0.29)]">
+            <div className=" flex flex-col items-center ml-10 mb-10 w-[220px] h-fit py-[30px] px-[15px] rounded-xl shadow-[0_4px_15px_rgba(48,79,254,0.29)]">
                 <CgProfile className=' text-5xl text-[#304ffe]'/>
                 <p className=' text-gray-600 text-[1.1rem] font-normal mt-5 '>{session?.user.email}</p>
                 <span className=' bg-gray-400 w-full h-[1px] mb-7 '></span>
