@@ -5,6 +5,8 @@ import TextInput from "../modules/TextInput";
 import RadioList from "../modules/RadioList";
 import TextList from "../modules/TextList";
 import CustomDatePicker from "../modules/CustomDatePicker";
+import toast, { Toaster } from "react-hot-toast";
+import { ThreeDots } from "react-loader-spinner";
 
 
 const AddProfilePage = () => {
@@ -20,17 +22,21 @@ const AddProfilePage = () => {
         rules:[],
         amenities:[],
     })
+    const [loading, setLoading]= useState(false)
     const submnitHandler=async()=>{
+        setLoading(true)
         const res= await fetch('/api/profile',{
             method:"POST",
             body:JSON.stringify(profileData),
             headers:{"Content-Type":"application/json"}
         })
         const data = await res.json()
+        setLoading(false)
         if (data.error) {
-            console.log(data.error)
+            toast.error(data.error)
+            // console.log(data.error)
         }else{
-            console.log(data)
+            toast.success(data.message)
         }
     }
     return (
@@ -47,7 +53,14 @@ const AddProfilePage = () => {
             <TextList title="امکانات رفاهی" profileData={profileData} setProfileData={setProfileData} type="amenities" />
             <TextList title="قوانین" profileData={profileData} setProfileData={setProfileData} type="rules" />
             <CustomDatePicker profileData={profileData} setProfileData={setProfileData}/>
+            <Toaster/>
+            {loading
+                ?
+                <ThreeDots height="45"  radius="9" color="#304ffe" ariaLabel="three-dots-loading"wrapperStyle={{margin:"auto"}} wrapperClassName=""visible={true}/>
+
+                :
             <button onClick={submnitHandler} className=" border-none bg-[#304ffe] text-white text-base rounded transition-all cursor-pointer p-[10px] hover:scale-105">ثبت آگهی</button>
+            }
         </div>
     );
 }

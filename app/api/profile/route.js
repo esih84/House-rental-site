@@ -33,12 +33,12 @@ export const POST=async(request)=>{
 
         }
 
-        const session = getServerSession(request)
-        console.log(session)
+        const session = await getServerSession(request)
         if (!session) {
             return NextResponse.json({error:"لطفا وارد حساب کاربری خود بشوید"},{status:401})
             
         }
+        console.log(session)
         const user = await User.findOne({email:session.user.email})
         if (!user) {
             return NextResponse.json({error:"حساب کاربری وجود ندارد"},{status:404})
