@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import toast, { Toaster } from "react-hot-toast";
 import { ThreeDots } from  'react-loader-spinner';
+import Loading from "../modules/Loading";
 const SignUpPage = () => {
     const [form, setForm]=useState({
         email:"",
@@ -59,8 +60,7 @@ const SignUpPage = () => {
                 <input className=" mb-10 w-[250px] border border-dashed border-[#304ffe] text-gray-600 rounded-[4px] p-[10px] text-base h-10 focus:border-solid focus:outline-none"  type="password" name="rePassword" value={form.rePassword} onChange={e=>setForm({...form,[e.target.name]:e.target.value})}/>
                 {form.isLoading?
                 
-                <ThreeDots height="45"  radius="9" color="#304ffe" ariaLabel="three-dots-loading"wrapperStyle={{margin:"auto"}} wrapperClassName=""visible={true}
-                />
+                <Loading/>                
                 :
                 <button onClick={signupHandler} className=" border-none bg-[#304ffe] text-white text-[1.2rem] font-normal rounded-[5px] transition-all cursor-pointer py-2 hover:scale-105 ">ثبت نام</button>
                 }

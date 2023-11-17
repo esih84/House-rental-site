@@ -54,12 +54,12 @@ export const POST=async(request)=>{
             category,
             rules,
             amenities,userId:new Types.ObjectId(user._id)})
-        console.log(newProfile)
+        // console.log(newProfile)
         return NextResponse.json({message:"آگهی جدید اضافه شد"},{status:201})
 
 
     } catch (error) {
-        console.log(error)
+        // console.log(error)
         return NextResponse.json({error:"مشکلی در سرور رخ داده است"},{status:500})
     }
 }

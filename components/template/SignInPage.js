@@ -6,6 +6,7 @@ import {signIn} from "next-auth/react"
 import Link from "next/link";
 import toast, { Toaster } from "react-hot-toast";
 import { ThreeDots } from  'react-loader-spinner';
+import Loading from "../modules/Loading";
 const SignInPage = () => {
     const [form, setForm]=useState({
         email:"",
@@ -45,8 +46,7 @@ const SignInPage = () => {
                 <input className=" mb-10 w-[250px] border border-dashed border-[#304ffe] text-gray-600 rounded-[4px] p-[10px] text-base h-10 focus:border-solid focus:outline-none"  type="password" name="password" value={form.password} onChange={e=>setForm({...form,[e.target.name]:e.target.value})}/>
                 {form.isLoading?
                 
-                <ThreeDots height="45"  radius="9" color="#304ffe" ariaLabel="three-dots-loading"wrapperStyle={{margin:"auto"}} wrapperClassName=""visible={true}
-                />
+                <Loading/>
                 :
                 <button onClick={signinHandler} className=" border-none bg-[#304ffe] text-white text-[1.2rem] font-normal rounded-[5px] transition-all cursor-pointer py-2 hover:scale-105 ">ورود</button>
                 }

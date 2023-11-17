@@ -7,6 +7,7 @@ import TextList from "../modules/TextList";
 import CustomDatePicker from "../modules/CustomDatePicker";
 import toast, { Toaster } from "react-hot-toast";
 import { ThreeDots } from "react-loader-spinner";
+import Loading from "../modules/Loading";
 
 
 const AddProfilePage = () => {
@@ -56,8 +57,7 @@ const AddProfilePage = () => {
             <Toaster/>
             {loading
                 ?
-                <ThreeDots height="45"  radius="9" color="#304ffe" ariaLabel="three-dots-loading"wrapperStyle={{margin:"auto"}} wrapperClassName=""visible={true}/>
-
+                <Loading/>
                 :
             <button onClick={submnitHandler} className=" border-none bg-[#304ffe] text-white text-base rounded transition-all cursor-pointer p-[10px] hover:scale-105">ثبت آگهی</button>
             }
