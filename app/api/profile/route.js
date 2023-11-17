@@ -5,6 +5,23 @@ import { Types } from "mongoose"
 import { getServerSession } from "next-auth/next"
 import { NextResponse } from "next/server"
 
+export const GET=async(request)=>{
+    try {
+        await connectDB()
+        const profile = await Profile.find().select("-userId")
+
+
+        // console.log(profile)
+
+        return NextResponse.json({data:profile},{status:200})
+
+
+    } catch (error) {
+        // console.log(error)
+        return NextResponse.json({error:"مشکلی در سرور رخ داده است"},{status:500})
+    }
+}
+
 export const POST=async(request)=>{
     try {
         await connectDB()
