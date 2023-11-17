@@ -79,7 +79,7 @@ export const PATCH = async(request)=>{
         category,
         rules,
         amenities}=await request.json()
-        // console.log(body)
+        // console.log(_id)
         if (!_id||!title||
             !description||
            !location||
@@ -99,28 +99,28 @@ export const PATCH = async(request)=>{
         }
         // console.log(session)
         const user = await User.findOne({email:session.user.email})
+        // console.log(user)
         if (!user) {
             return NextResponse.json({error:"حساب کاربری وجود ندارد"},{status:404})
             
         }
 
         const profile = await Profile.findOne({_id})
-
         if (!profile.userId.equals(user._id)) {
             return NextResponse.json({error:"دسترسی شما به این آگهی محدود است"},{status:403})
             
         }
 
-        Profile.title=title,
-        Profile.description=description,
-        Profile.location=location,
-        Profile.phone=phone,
-        Profile.price=price,
-        Profile.realestate=realestate,
-        Profile.constructionDate=constructionDate,
-        Profile.category=category,
-        Profile.rules=rules,
-        Profile.amenities=amenities
+        profile.title=title,
+        profile.description=description,
+        profile.location=location,
+        profile.phone=phone,
+        profile.price=price,
+        profile.realestate=realestate,
+        profile.constructionDate=constructionDate,
+        profile.category=category,
+        profile.rules=rules,
+        profile.amenities=amenities
         profile.save()
         return NextResponse.json({message:"آگهی با موفقیت ویراش شد"},{status:200})
 
