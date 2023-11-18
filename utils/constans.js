@@ -10,10 +10,10 @@ const categories = {
     office: "دفتر",
   };
   const icons ={
-    villa:<RiHome3Line className=" text-[1.8rem] bg-[#304ffe58] text-[#304ffe] p-[3px] rounded"/>,
-    apartment:<MdApartment className=" text-[1.8rem] bg-[#304ffe58] text-[#304ffe] p-[3px] rounded"/>,
-    store:<BiStore className=" text-[1.8rem] bg-[#304ffe58] text-[#304ffe] p-[3px] rounded"/>,
-    office:<GiOfficeChair className=" text-[1.8rem] bg-[#304ffe58] text-[#304ffe] p-[3px] rounded"/>
+    villa:<RiHome3Line className=" text-3xl bg-[#304ffe58] text-[#304ffe] p-[3px] rounded"/>,
+    apartment:<MdApartment className=" text-3xl bg-[#304ffe58] text-[#304ffe] p-[3px] rounded"/>,
+    store:<BiStore className=" text-3xl bg-[#304ffe58] text-[#304ffe] p-[3px] rounded"/>,
+    office:<GiOfficeChair className=" text-3xl bg-[#304ffe58] text-[#304ffe] p-[3px] rounded"/>
 }
   
 const services = ["خرید", "فروش", "رهن", "اجاره"];
