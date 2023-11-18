@@ -3,10 +3,12 @@ import './globals.css';
 import { myFont } from '@/utils/fonts';
 import AuthProvider from 'providers/AuthProvider';
 
-export const metadata={
-  title:"home rental site"
+export const metadata = {
+  title: {
+    default:'سایت فروش ملک'
+  },
+  description: 'بروزترین سایت فروش ملک',
 }
-
 
 export default function RootLayout({ children }) {
   return (

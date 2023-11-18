@@ -6,6 +6,18 @@ import User from "@/models/User";
 import connectDB from "@/utils/connectDB";
 import { getServerSession } from "next-auth";
 
+export const generateMetadata=async({params:{profileId}})=>{
+    await connectDB()
+    
+    const profile = await Profile.findOne({_id:profileId})
+    return{
+        title :profile.title,
+        description:profile.description
+    }
+}
+
+
+
 const ProfileDetails =async ({params:{profileId}}) => {
     await connectDB()
 

@@ -1,4 +1,14 @@
 import BuyResidentialPage from "@/components/template/BuyResidentialPage";
+import { categories } from "@/utils/constans";
+
+export const generateMetadata=async({searchParams:{category}})=>{
+    // console.log(category)
+
+    return{
+        title : category ? `آگهی های ${categories[category]}`:'آگهی ها'
+    }
+}
+
 
 const BuyResidential =async ({searchParams:{category}}) => {
     // حالت تمرینی دارد

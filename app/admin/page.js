@@ -7,6 +7,9 @@ import connectDB from "@/utils/connectDB";
 import { getServerSession } from "next-auth/next";
 import { redirect } from "next/navigation";
 
+export const metadata = {
+    title:'پنل ادمین'
+  }
 const Admin =async () => {
     const session = await getServerSession(authOptions)
     if(!session)redirect('/SignIn')
