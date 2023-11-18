@@ -12,7 +12,8 @@ export const generateMetadata=async({params:{profileId}})=>{
     const profile = await Profile.findOne({_id:profileId})
     return{
         title :profile.title,
-        description:profile.description
+        description:profile.description,
+        authors:{ name:profile.realestate}
     }
 }
 
