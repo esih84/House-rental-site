@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="fa" dir="rtl">
       
       <body className={myFont.className}>
-        <AuthProvider>
+        <AuthProvider >
           <Layout>
             {children}
           </Layout>
