@@ -10,6 +10,10 @@ const userSchema = new Schema({
         type:String,
         required:true
     },
+    username:{
+        type:String,
+        default:"کاربر گرامی"
+    },
     role:{
         type:String,
         default:"USER"

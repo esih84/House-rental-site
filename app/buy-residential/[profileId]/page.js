@@ -24,15 +24,14 @@ const ProfileDetails =async ({params:{profileId}}) => {
 
     // console.log(profile)
     const session = await getServerSession(authOptions)
-    if(!session)redirect('/SignIn')
     await connectDB()
-    const user = await User.findOne({email:session.user.email})
+    const user = await User.findOne({email:session?.user.email})
     const profile = await Profile.findOne({_id:profileId})
     return (
         <>
         
             <DetailsPage data={profile} />
-            {user.role==="ADMIN"&& profile.published ===false &&
+            {user?.role==="ADMIN"&& profile.published ===false &&
             <PublishButton id={profile._id}/>
             }
         </>
